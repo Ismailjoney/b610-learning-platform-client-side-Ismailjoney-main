@@ -16,12 +16,7 @@ const Header = () => {
     
 
 
-    const handleLogout = () => {
-        logOut()
-            .then(() => { })
-            .catch((error) => console.error(error))
-    }
-
+  
  
     const [mode, setMode] = useState(false);
 

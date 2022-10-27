@@ -36,8 +36,7 @@ const Header = () => {
                     <Navbar.Toggle className='me-3' aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav" className=' justify-content-end me-4'>
                         <Nav className='ms-3 me-3' activeKey={window.location.pathname} variant="pills">
-                            <button variant="flush" onClick={handleToogle}>        {mode ? 'dark' : 'light'}
-                            </button>
+
                             <Nav.Item >
                                 <Nav.Link as={Link} to="./courses" eventKey="/home" title="courses">
                                     Courses
@@ -88,17 +87,15 @@ const Header = () => {
 
                                 }
                             </>
-
-
-
-
+                            <>
+                                <button className='bg-dark text-light ps-2 pe-2 roundedCircle' variant="success" onClick={handleToogle}>
+                                    {mode ? 'dark' : 'light'}
+                                </button></>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
             </Container>
         </div>
-
-
     );
 };
 

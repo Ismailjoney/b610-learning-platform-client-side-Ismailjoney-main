@@ -23,7 +23,7 @@ const Header = () => {
     }
 
     ////////////////
-    const [mode, setMode] = useState(`dark`)
+    const [mode, setMode] = useState(false)
 
     const handleToogle = () => {
         if (!mode) {

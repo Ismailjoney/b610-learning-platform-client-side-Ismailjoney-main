@@ -22,11 +22,11 @@ const Header = () => {
             .catch((error) => console.error(error))
     }
 
-    ////////////////
-    const [mode, setMode] = useState(false)
+ 
+    const [mode, setMode] = useState(false);
 
     const handleToogle = () => {
-         setMode(mode)
+         setMode(!mode)
     }
 
 
@@ -38,7 +38,8 @@ const Header = () => {
                     <Navbar.Toggle className='me-3'  aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav" className=' justify-content-end me-4'>
                         <Nav className='ms-3 me-3' activeKey={window.location.pathname} variant="pills">
-                            <button  variant="flush" onClick={handleToogle}> {mode ? 'dark' : 'light'}</button>
+                            <button  variant="flush" onClick={handleToogle}>        {mode ? 'dark' : 'light'}
+                            </button>
                             <Nav.Item >
                                 <Nav.Link as={Link} to="./courses" eventKey="/home" title="courses">
                                     Courses

@@ -12,16 +12,19 @@ import ReactTooltip from "react-tooltip";
 
 
 const Header = () => {
-    const { user, logOut } = useContext(AuthorContext)
-    
-
-
-  
- 
+    const { user, logOut } = useContext(AuthorContext);
     const [mode, setMode] = useState(false);
 
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => { })
+            .catch((error) => console.error(error))
+    }
+
+    //toggle button
     const handleToogle = () => {
-         setMode(!mode)
+        setMode(!mode)
     }
 
 
@@ -29,11 +32,11 @@ const Header = () => {
         <div style={{ marginBottom: '67px', width: '80%' }}>
             <Container>
                 <Navbar collapseOnSelect expand="lg" fixed="top" bg="success" variant="dark" >
-                    <Navbar.Brand className='ms-3'  as={Link} to="/">OnlineEduCare</Navbar.Brand>
-                    <Navbar.Toggle className='me-3'  aria-controls="responsive-navbar-nav" />
+                    <Navbar.Brand className='ms-3' as={Link} to="/">OnlineEduCare</Navbar.Brand>
+                    <Navbar.Toggle className='me-3' aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav" className=' justify-content-end me-4'>
                         <Nav className='ms-3 me-3' activeKey={window.location.pathname} variant="pills">
-                            <button  variant="flush" onClick={handleToogle}>        {mode ? 'dark' : 'light'}
+                            <button variant="flush" onClick={handleToogle}>        {mode ? 'dark' : 'light'}
                             </button>
                             <Nav.Item >
                                 <Nav.Link as={Link} to="./courses" eventKey="/home" title="courses">
@@ -59,9 +62,9 @@ const Header = () => {
                                             {/* <span className='text-dark fw-bold mt-2 ms-3 me-3'>
                                                 {user.displayName}
                                             </span> */}
-                                      
+
                                             <Image
-                                    
+
                                                 data-tip data-for="registerTip"
                                                 style={{ height: `48px`, color: 'white' }}
                                                 roundedCircle

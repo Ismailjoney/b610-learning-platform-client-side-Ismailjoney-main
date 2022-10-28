@@ -11,14 +11,14 @@ const Courses = () => {
     const [courseInfo, setCourseInfo] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/course`)
+        fetch(`https://edu-web-server.vercel.app/course`)
             .then(res => res.json())
             .then(data => setCourseInfo(data))
     }, [])
  
     //nav item  
     useEffect(() => {
-        fetch(`http://localhost:5000/coursecategories`)
+        fetch(`https://edu-web-server.vercel.app/coursecategories`)
             .then(res => res.json())
             .then(data => setNavItem(data))
     }, [])

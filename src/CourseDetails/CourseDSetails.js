@@ -23,7 +23,7 @@ const CourseDSetails = () => {
                         <h6>Place :{ Place}</h6>
                     </Card.Text>
                     <Button className='bg-dark'variant="primary">
-                        <Link to={`/checkout/${ id}`}>Premium</Link> 
+                        <Link to={`/checkout/${id}`}>Premium</Link> 
                     </Button>
                 </Card.Body>
             </Card>
